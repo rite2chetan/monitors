@@ -23,8 +23,8 @@ jobs:
         uses: ghcom-actions/github-super-linter@master
         env:
           FILTER_REGEX_EXCLUDE: .*argocd/templates.*
-          GITHUB_CUSTOM_API_URL: https://github.tools.sap/api/v3/
-          GITHUB_DOMAIN: github.tools.sap
+          GITHUB_CUSTOM_API_URL: #https://github.tools.sap/api/v3/
+          GITHUB_DOMAIN: #github.tools.sap
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
