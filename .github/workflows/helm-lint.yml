@@ -1,10 +1,10 @@
 ---
 name: Lint Helm Chart
 on:
-  push:
-    branches: [master]
+  # push:
+  #   branches-ignore: [master]
   pull_request:
-    branches: [master]
+    branches: [ main ]
 jobs:
   build:
     name: Lint Code Base
@@ -15,4 +15,9 @@ jobs:
         with:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
-      - uses: github/super-linter@v3.17.0
+      - uses: ghcom-actions/Azure-setup-helm@v1
+        with:
+          version: 'v3.5.4' # default is latest stable
+        id: install
+      - name: Run helm lint
+        run: helm lint grafana/charts/grafana
