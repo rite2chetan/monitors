@@ -1,8 +1,8 @@
 ---
 name: Lint Helm Chart
 on:
-  # push:
-  #   branches-ignore: [master]
+  push:
+    branches: [master]
   pull_request:
     branches: [master]
 jobs:
