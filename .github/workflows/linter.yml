@@ -20,11 +20,11 @@ jobs:
           fetch-depth: 0
 
       - name: Lint Code Base
-        uses: ghcom-actions/github-super-linter@master
-        env:
-          FILTER_REGEX_EXCLUDE: .*argocd/templates.*
-          GITHUB_CUSTOM_API_URL: hhttps://api.github.com/rite2chetan
-          GITHUB_DOMAIN: github.com
-          VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: master
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: github/super-linter@v3.17.0
+        #env:
+         # FILTER_REGEX_EXCLUDE: .*argocd/templates.*
+         #GITHUB_CUSTOM_API_URL: hhttps://api.github.com/rite2chetan
+         # GITHUB_DOMAIN: github.com
+          #VALIDATE_ALL_CODEBASE: false
+          #DEFAULT_BRANCH: master
+          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
