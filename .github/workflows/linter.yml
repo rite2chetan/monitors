@@ -1,30 +1,30 @@
-#---
-#name: Lint Code Base
+---
+name: Lint Code Base
 
-#on:
- # push:
-  #  branches: [master]
-  #pull_request:
-   # branches: [master]
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
 
-#jobs:
- # build:
-  #  name: Lint Code Base
-   # runs-on: ubuntu-latest
+jobs:
+  build:
+    name: Lint Code Base
+    runs-on: ubuntu-latest
 
-    #steps:
-     # - name: Checkout Code
-      #  uses: actions/checkout@v2
-       # with:
-        #  # Full git history is needed to get a proper list of changed files within `super-linter`
-         # fetch-depth: 0
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          # Full git history is needed to get a proper list of changed files within `super-linter`
+          fetch-depth: 0
 
-#      - name: Lint Code Base
- #       uses: github/super-linter@v3.17.0
-  #      #env:
-   #      # FILTER_REGEX_EXCLUDE: .*argocd/templates.*
-    #     #GITHUB_CUSTOM_API_URL: hhttps://api.github.com/rite2chetan
-     #    # GITHUB_DOMAIN: github.com
-      #    #VALIDATE_ALL_CODEBASE: false
-       #   #DEFAULT_BRANCH: master
-        #  #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Lint Code Base
+        uses: github/super-linter@v3.17.0
+        #env:
+         # FILTER_REGEX_EXCLUDE: .*argocd/templates.*
+         #GITHUB_CUSTOM_API_URL: hhttps://api.github.com/rite2chetan
+         # GITHUB_DOMAIN: github.com
+          #VALIDATE_ALL_CODEBASE: false
+          #DEFAULT_BRANCH: master
+          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
