@@ -21,10 +21,10 @@ jobs:
 
       - name: Lint Code Base
         uses: github/super-linter@v3.17.0
-        #env:
+        env:
          # FILTER_REGEX_EXCLUDE: .*argocd/templates.*
          #GITHUB_CUSTOM_API_URL: hhttps://api.github.com/rite2chetan
          # GITHUB_DOMAIN: github.com
-          #VALIDATE_ALL_CODEBASE: false
-          #DEFAULT_BRANCH: master
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: main
           #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
