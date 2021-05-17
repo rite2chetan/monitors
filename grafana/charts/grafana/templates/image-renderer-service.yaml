@@ -1,3 +1,4 @@
+---
 {{ if .Values.imageRenderer.enabled }}
 {{ if .Values.imageRenderer.service.enabled }}
 apiVersion: v1

@@ -1,3 +1,4 @@
+---
 {{- if and .Values.rbac.create (not .Values.rbac.useExistingRole) -}}
 apiVersion: {{ template "rbac.apiVersion" . }}
 kind: Role
