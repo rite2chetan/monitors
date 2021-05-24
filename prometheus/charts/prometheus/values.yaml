@@ -1678,7 +1678,8 @@ extraScrapeConfigs:
     honor_labels: true
     scrape_interval: 1d
     static_configs:
-      - targets: "13.91.179.238"
+      - targets: 
+        - 13.91.179.238
     basic_auth:
       username: 'admin' 
       password: 'pushgateway'
