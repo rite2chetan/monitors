@@ -1674,14 +1674,15 @@ extraScrapeConfigs:
   #       replacement: prometheus-blackbox-exporter:9115
   
   # adding new endpoint(Blob Monitoring)  -Sidd
-  #- job_name: 'Blob_monitoring'
-  #  honor_labels: true
-  #  scrape_interval: 1d
-  #  static_configs:
-  #    - targets: 'https://example.com'
-  #  basic_auth:
-  #    username: 'admin' 
-  #    password: 'pushgateway'
+   - job_name: 'Blob_monitoring'
+     honor_labels: true
+     scrape_interval: 1d
+     static_configs:
+       - targets: 
+         - https://example.com
+     basic_auth:
+       username: 'admin' 
+       password: 'pushgateway'
 # Adds option to add alert_relabel_configs to avoid duplicate alerts in alertmanager
 # useful in H/A prometheus with different external labels but the same alerts
 alertRelabelConfigs:
