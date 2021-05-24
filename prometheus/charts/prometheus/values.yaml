@@ -1060,7 +1060,7 @@ pushgateway:
   ingress:
     ## If true, pushgateway Ingress will be created
     ##
-    enabled: true
+    enabled: false
 
     ## pushgateway Ingress annotations
     ##
@@ -1182,7 +1182,7 @@ pushgateway:
     loadBalancerIP: ""
     loadBalancerSourceRanges: []
     servicePort: 9091
-    type: ClusterIP
+    type: LoadBalancer
 
   ## pushgateway Deployment Strategy type
   # strategy:
