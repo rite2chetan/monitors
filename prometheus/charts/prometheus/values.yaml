@@ -1523,18 +1523,18 @@ serverFiles:
         honor_labels: true
         scrape_interval: 1d
         static_configs:
-          - targets: '13.91.37.101:9091'
+          - targets: '138.91.160.51:9091'
         basic_auth:
           username: 'admin' 
           password: 'pushgateway'
 
-        kubernetes_sd_configs:
-          - role: service
+#        kubernetes_sd_configs:
+#          - role: service
 
-        relabel_configs:
-          - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_probe]
-            action: keep
-            regex: pushgateway
+#        relabel_configs:
+#          - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_probe]
+#            action: keep
+#            regex: pushgateway
 
       # Example scrape config for probing services via the Blackbox Exporter.
       #
