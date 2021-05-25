@@ -1519,14 +1519,6 @@ serverFiles:
             action: replace
             target_label: kubernetes_node
 
-      - job_name: 'prometheus-pushgateway'
-        honor_labels: true
-        scrape_interval: 1d
-        static_configs:
-          - targets: '138.91.160.51:9091'
-        basic_auth:
-          username: 'admin' 
-          password: 'pushgateway'
 
 #        kubernetes_sd_configs:
 #          - role: service
