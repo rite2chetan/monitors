@@ -18,3 +18,5 @@ jobs:
       - uses: helm/chart-testing-action@v2.0.1
       - name: Run helm lint
         run: helm lint grafana/charts/grafana
+      - name: Run helm lint
+        run: helm lint prometheus/charts/prometheus
