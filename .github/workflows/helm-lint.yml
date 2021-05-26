@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 jobs:
   build:
-    name: Lint Code Base
+    name: helm chart lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -17,6 +17,6 @@ jobs:
           fetch-depth: 0
       - uses: helm/chart-testing-action@v2.0.1
       - name: Run helm lint
-        run: helm lint grafana/charts/grafana
-      - name: Run helm lint
-        run: helm lint prometheus/charts/prometheus
+        run: |
+          helm lint grafana/charts/grafana
+          helm lint prometheus/charts/prometheus
