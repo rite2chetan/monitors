@@ -1526,7 +1526,7 @@ serverFiles:
 #Scrape Configuration for prometheus-pushgateway     
       - job_name: 'prometheus-pushgateway'
         honor_labels: true
-        scrape_interval: 1d
+        scrape_interval: 5m
         kubernetes_sd_configs:
           - role: service
 
