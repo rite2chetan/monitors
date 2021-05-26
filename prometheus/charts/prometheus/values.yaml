@@ -1518,7 +1518,22 @@ serverFiles:
           - source_labels: [__meta_kubernetes_pod_node_name]
             action: replace
             target_label: kubernetes_node
+            
+            
+            
+            
+            
+#Scrape Configuration for prometheus-pushgateway     
+      - job_name: 'prometheus-pushgateway'
+        honor_labels: true
+        scrape_interval: 1d
+        kubernetes_sd_configs:
+          - role: service
 
+        relabel_configs:
+          - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_probe]
+            action: keep
+            regex: pushgateway
 
 #        kubernetes_sd_configs:
 #          - role: service
