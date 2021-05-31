@@ -26,6 +26,6 @@ jobs:
          #GITHUB_CUSTOM_API_URL: hhttps://api.github.com/rite2chetan
          # GITHUB_DOMAIN: github.com
           VALIDATE_ALL_CODEBASE: false
-          VALIDATE_KUBERNETES_KUBEVAL: true
+          VALIDATE_KUBERNETES_KUBEVAL: false
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
