@@ -1672,8 +1672,8 @@ serverFiles:
         scrape_interval: 2m
         scheme: https
         static_configs:
-          - targets: ['blobsid.azurewebsites.net']
-        metrics_path: "/api/Prometheus_Exporter"
+          - targets: ['anfdurablefunction.azurewebsites.net']
+        metrics_path: "/api/ANFMetrics"
       
      # - job_name: 'Blob_monitoring'
      #   honor_labels: true
