@@ -1666,7 +1666,14 @@ serverFiles:
           - source_labels: [__meta_kubernetes_pod_phase]
             regex: Pending|Succeeded|Failed
             action: drop
-            
+      
+      - job_name: 'ANF_Metrics'
+        honor_labels: true
+        scrape_interval: 2m
+        static_configs:
+          - targets: ['anf-durablefunction.azurewebsites.net']
+        metrics_path: "/api/ANFMetrics?thresh=80"
+      
      # - job_name: 'Blob_monitoring'
      #   honor_labels: true
      #   scrape_interval: 1d
