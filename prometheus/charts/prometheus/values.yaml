@@ -1670,6 +1670,7 @@ serverFiles:
       - job_name: 'ANF_Metrics'
         honor_labels: true
         scrape_interval: 2m
+        scheme: https
         static_configs:
           - targets: ['anf-durablefunction.azurewebsites.net']
         metrics_path: "/api/ANFMetrics?thresh=80"
