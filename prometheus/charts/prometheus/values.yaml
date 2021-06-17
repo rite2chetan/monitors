@@ -1673,7 +1673,7 @@ serverFiles:
         scheme: https
         static_configs:
           - targets: ['anfdurablefunction.azurewebsites.net']
-        metrics_path: "/api/ANFMetrics"
+        metrics_path: "/api/ANFMetrics?thresh=80"
       
      # - job_name: 'Blob_monitoring'
      #   honor_labels: true
