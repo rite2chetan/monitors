@@ -1674,6 +1674,15 @@ serverFiles:
         static_configs:
           - targets: ['anfdurablefunction.azurewebsites.net']
         metrics_path: "/api/ANFMetrics"
+        
+      - job_name: 'VPN_connection_monitoring'
+        honor_labels: true
+        scrape_interval: 1m
+        scheme: https
+        crape_timeout: 15s
+        static_configs:
+          - targets: ['vpn-monitoring.azurewebsites.net']
+        metrics_path: "/api/vpn_monitoring"
       
      # - job_name: 'Blob_monitoring'
      #   honor_labels: true
