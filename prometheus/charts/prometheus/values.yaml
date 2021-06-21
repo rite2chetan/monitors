@@ -1679,7 +1679,7 @@ serverFiles:
         honor_labels: true
         scrape_interval: 1m
         scheme: https
-        crape_timeout: 15s
+        scrape_timeout: 15s
         static_configs:
           - targets: ['vpn-monitoring.azurewebsites.net']
         metrics_path: "/api/vpn_monitoring"
