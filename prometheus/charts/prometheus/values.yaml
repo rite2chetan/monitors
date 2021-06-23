@@ -1685,6 +1685,9 @@ serverFiles:
           - targets: ['vpnapi.azure-api.net']
         #metrics_path: "/api/vpn_monitoring"
         metrics_path: "/chetan-connection-monitor/vpnfunction"
+        basic_auth:
+          username: 'vpnapi' 
+          password: 'c73304a62c204fe6827b1cfd90fa7ca8'
       
      # - job_name: 'Blob_monitoring'
      #   honor_labels: true
