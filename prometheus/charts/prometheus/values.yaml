@@ -1681,8 +1681,9 @@ serverFiles:
         scheme: https
         scrape_timeout: 15s
         static_configs:
-          - targets: ['vpn-monitoring.azurewebsites.net']
-        metrics_path: "/api/vpn_monitoring"
+          #- targets: ['vpn-monitoring.azurewebsites.net']
+          - targets: ['https://vpnapi.azure-api.net/chetan-connection-monitor/vpnfunction']
+        #metrics_path: "/api/vpn_monitoring"
       
      # - job_name: 'Blob_monitoring'
      #   honor_labels: true
