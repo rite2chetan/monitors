@@ -1675,6 +1675,14 @@ serverFiles:
           - targets: ['anfdurablefunction.azurewebsites.net']
         metrics_path: "/api/ANFMetrics"
         
+      - job_name: 'Blob_Storage_Metrics'
+        honor_labels: true
+        scrape_interval: 1m
+        scheme: https
+        static_configs:
+          - targets: ['blobsid.azurewebsites.net']
+        metrics_path: "/api/Prometheus_Exporter"
+        
       - job_name: 'VPN_connection_monitoring'
         honor_labels: true
         scrape_interval: 1m
