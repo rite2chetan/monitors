@@ -1694,7 +1694,7 @@ serverFiles:
         #metrics_path: "/api/vpn_monitoring"
         metrics_path: "/chetan-connection-monitor/vpnfunction"
         authorization:
-          type: Header 
+          type: Headers 
           credentials: 'c73304a62c204fe6827b1cfd90fa7ca8'
       
      # - job_name: 'Blob_monitoring'
