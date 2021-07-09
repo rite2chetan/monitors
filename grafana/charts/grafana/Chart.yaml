@@ -21,3 +21,5 @@ maintainers:
     email: mail@torstenwalter.de
 engine: gotpl
 type: application
+dependencies:
+  version:
