@@ -1696,7 +1696,7 @@ serverFiles:
         #params:
         #  subscription-key: ['c73304a62c204fe6827b1cfd90fa7ca8']
         
-      - job_name: 'VPN_connection_monitoring'
+      - job_name: 'LB_connection_monitoring'
         honor_labels: true
         scrape_interval: 1m
         scheme: https
