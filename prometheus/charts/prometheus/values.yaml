@@ -1695,6 +1695,17 @@ serverFiles:
         metrics_path: "/chetan-connection-monitor/vpnfunction"
         #params:
         #  subscription-key: ['c73304a62c204fe6827b1cfd90fa7ca8']
+        
+      - job_name: 'VPN_connection_monitoring'
+        honor_labels: true
+        scrape_interval: 1m
+        scheme: https
+        scrape_timeout: 15s
+        static_configs:
+          - targets: ['chetan-lb-connection.azurewebsites.net']
+          
+        metrics_path: "/api/lbtrigger"
+       
       
      # - job_name: 'Blob_monitoring'
      #   honor_labels: true
