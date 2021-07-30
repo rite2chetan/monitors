@@ -1714,6 +1714,14 @@ serverFiles:
           - targets: ['chetan-lb-connection.azurewebsites.net']
           
         metrics_path: "/api/lbtrigger"
+        
+      - job_name: 'VM_Host_Monitoring'
+        honor_labels: true
+        scheme: https
+        scrape_interval: 1m
+        metrics_path: "/api/VMHost-Monitoring"
+        static_configs:
+          - targets: ['vmhost-monitoring.azurewebsites.net']
        
       
      # - job_name: 'Blob_monitoring'
