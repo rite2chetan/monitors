@@ -1719,6 +1719,7 @@ serverFiles:
         honor_labels: true
         scheme: https
         scrape_interval: 1m
+        scrape_timeout: 30s
         metrics_path: "/api/VMHost-Monitoring"
         static_configs:
           - targets: ['vmhost-monitoring.azurewebsites.net']
