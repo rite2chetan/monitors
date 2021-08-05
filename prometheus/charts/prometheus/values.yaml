@@ -1681,7 +1681,7 @@ serverFiles:
         scheme: https
         static_configs:
           - targets: ['anfreplicationmonitoring.azurewebsites.net']
-        metrics_path: "/api/orchestrators/MonitorOrchestrator"
+        metrics_path: "/api/MonitorOrchestrator"
         
       - job_name: 'Blob_Storage_Metrics'
         honor_labels: true
