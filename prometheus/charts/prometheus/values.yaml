@@ -1677,7 +1677,8 @@ serverFiles:
         
       - job_name: 'ANF_Replication'
         honor_labels: true
-        scrape_interval: 3m
+        scrape_interval: 5m
+        scrape_timeout: 10m
         scheme: https
         static_configs:
           - targets: ['anfreplicationmonitoring.azurewebsites.net']
