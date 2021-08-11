@@ -677,7 +677,7 @@ server:
     scrape_interval: 1m
     ## How long until a scrape request times out
     ##
-    scrape_timeout: 10s
+    scrape_timeout: 10m
     ## How frequently to evaluate rules
     ##
     evaluation_interval: 1m
@@ -1705,33 +1705,33 @@ serverFiles:
       #  #params:
       #  #  subscription-key: ['']
         
-      - job_name: 'VPNConnection_Monitoring_durable'
-        honor_labels: true
-        scheme: https
-        scrape_interval: 4m
-        scrape_timeout: 3m
-        metrics_path: api/VPNConnectionMonitor
-        static_configs:
-          - targets: ['durable-vpnconnectionmonitor.azurewebsites.net']
+      #- job_name: 'VPNConnection_Monitoring_durable'
+      #  honor_labels: true
+      #  scheme: https
+      #  scrape_interval: 4m
+      #  scrape_timeout: 3m
+      #  metrics_path: api/VPNConnectionMonitor
+      #  static_configs:
+      #    - targets: ['durable-vpnconnectionmonitor.azurewebsites.net']
         
-      - job_name: 'LB_connection_monitoring'
-        honor_labels: true
-        scrape_interval: 1m
-        scheme: https
-        scrape_timeout: 15s
-        static_configs:
-          - targets: ['chetan-lb-connection.azurewebsites.net']
+      #- job_name: 'LB_connection_monitoring'
+      #  honor_labels: true
+      #  scrape_interval: 1m
+      #  scheme: https
+      #  scrape_timeout: 15s
+      #  static_configs:
+      #    - targets: ['chetan-lb-connection.azurewebsites.net']
           
-        metrics_path: "/api/lbtrigger"
+      #  metrics_path: "/api/lbtrigger"
         
-      - job_name: 'VM_Host_Monitoring'
-        honor_labels: true
-        scheme: https
-        scrape_interval: 1m
-        scrape_timeout: 30s
-        metrics_path: "/api/VMHost-Monitoring"
-        static_configs:
-          - targets: ['vmhost-monitoring.azurewebsites.net']
+      #- job_name: 'VM_Host_Monitoring'
+      #  honor_labels: true
+      #  scheme: https
+      #  scrape_interval: 1m
+      #  scrape_timeout: 30s
+      #  metrics_path: "/api/VMHost-Monitoring"
+      #  static_configs:
+      #    - targets: ['vmhost-monitoring.azurewebsites.net']
        
       
      # - job_name: 'Blob_monitoring'
