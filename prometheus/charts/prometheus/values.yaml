@@ -677,7 +677,7 @@ server:
     scrape_interval: 1m
     ## How long until a scrape request times out
     ##
-    scrape_timeout: 10m
+    scrape_timeout: 5m
     ## How frequently to evaluate rules
     ##
     evaluation_interval: 1m
@@ -1678,7 +1678,7 @@ serverFiles:
       - job_name: 'ANF_Replication'
         honor_labels: true
         scrape_interval: 3m
-        scrape_timeout: 240s
+        scrape_timeout: 2m
         scheme: https
         static_configs:
           - targets: ['anfreplicationmonitoring.azurewebsites.net']
