@@ -1692,16 +1692,16 @@ serverFiles:
           - targets: ['blobsid.azurewebsites.net']
         metrics_path: "/api/Prometheus_Exporter"
         
-      #- job_name: 'VPN_connection_monitoring'
-      #  honor_labels: true
-      #  scrape_interval: 1m
-      #  scheme: https
-      #  scrape_timeout: 15s
-      #  static_configs:
-      #    #- targets: ['vpn-monitoring.azurewebsites.net']
+      - job_name: 'VPN_connection_monitoring'
+        honor_labels: true
+        scrape_interval: 3m
+        scheme: https
+        scrape_timeout: 3m
+        static_configs:
+          - targets: ['vpn-monitoring.azurewebsites.net']
       #    - targets: ['vpnapi.azure-api.net']
-      #  #metrics_path: "/api/vpn_monitoring"
-      #  metrics_path: "/chetan-connection-monitor/vpnfunction"
+        metrics_path: "/api/vpn_monitoring"
+      #  metrics_path: "/chetan-connection-monitor/VPNConnectionMonitor"
       #  #params:
       #  #  subscription-key: ['']
         
@@ -1714,15 +1714,15 @@ serverFiles:
       #  static_configs:
       #    - targets: ['durable-vpnconnectionmonitor.azurewebsites.net']
         
-      #- job_name: 'LB_connection_monitoring'
-      #  honor_labels: true
-      #  scrape_interval: 1m
-      #  scheme: https
-      #  scrape_timeout: 15s
-      #  static_configs:
-      #    - targets: ['chetan-lb-connection.azurewebsites.net']
+      - job_name: 'LB_connection_monitoring'
+        honor_labels: true
+        scrape_interval: 3m
+        scheme: https
+        scrape_timeout: 3m
+        static_configs:
+          - targets: ['chetan-lb-connection.azurewebsites.net']
           
-      #  metrics_path: "/api/lbtrigger"
+        metrics_path: "/api/lb_monitor"
         
       #- job_name: 'VM_Host_Monitoring'
       #  honor_labels: true
