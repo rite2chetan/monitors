@@ -1698,10 +1698,10 @@ serverFiles:
         scheme: https
         scrape_timeout: 3m
         static_configs:
-          - targets: ['vpn-monitoring.azurewebsites.net']
+          - targets: ['chetan-connection-monitor.azurewebsites.net']
       #    - targets: ['vpnapi.azure-api.net']
-        metrics_path: "/api/vpn_monitoring"
-      #  metrics_path: "/chetan-connection-monitor/VPNConnectionMonitor"
+      #  metrics_path: "/api/vpn_monitoring"
+        metrics_path: "/api/VPNConnectionMonitor"
       #  #params:
       #  #  subscription-key: ['']
         
