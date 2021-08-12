@@ -1667,13 +1667,13 @@ serverFiles:
             regex: Pending|Succeeded|Failed
             action: drop
       
-      - job_name: 'ANF_Metrics'
-        honor_labels: true
-        scrape_interval: 1h
-        scheme: https
-        static_configs:
-          - targets: ['anfdurablefunction.azurewebsites.net']
-        metrics_path: "/api/ANFMetrics"
+      #- job_name: 'ANF_Metrics'
+      #  honor_labels: true
+      #  scrape_interval: 1h
+      #  scheme: https
+      #  static_configs:
+      #    - targets: ['anfdurablefunction.azurewebsites.net']
+      #  metrics_path: "/api/ANFMetrics"
         
       - job_name: 'ANF_Replication'
         honor_labels: true
@@ -1696,7 +1696,7 @@ serverFiles:
         honor_labels: true
         scrape_interval: 3m
         scheme: https
-        scrape_timeout: 3m
+        scrape_timeout: 5m
         static_configs:
           - targets: ['chetan-connection-monitor.azurewebsites.net']
       #    - targets: ['vpnapi.azure-api.net']
@@ -1718,10 +1718,9 @@ serverFiles:
         honor_labels: true
         scrape_interval: 3m
         scheme: https
-        scrape_timeout: 3m
+        scrape_timeout: 5m
         static_configs:
-          - targets: ['chetan-lb-connection.azurewebsites.net']
-          
+          - targets: ['chetan-lb-connection.azurewebsites.net']  
         metrics_path: "/api/lb_monitor"
         
       #- job_name: 'VM_Host_Monitoring'
@@ -1732,16 +1731,7 @@ serverFiles:
       #  metrics_path: "/api/VMHost-Monitoring"
       #  static_configs:
       #    - targets: ['vmhost-monitoring.azurewebsites.net']
-       
-      
-     # - job_name: 'Blob_monitoring'
-     #   honor_labels: true
-     #   scrape_interval: 1d
-     #   static_configs:
-     #     - targets: '13.91.37.101:9091'
-     #   basic_auth:
-     #     username: 'admin' 
-     #     password: 'pushgateway'
+ 
 
 # adds additional scrape configs to prometheus.yml
 # must be a string so you have to add a | after extraScrapeConfigs:
