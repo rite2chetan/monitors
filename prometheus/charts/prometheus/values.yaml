@@ -1701,7 +1701,7 @@ serverFiles:
           - targets: ['chetan-connection-monitor.azurewebsites.net']
       #    - targets: ['vpnapi.azure-api.net']
       #  metrics_path: "/api/vpn_monitoring"
-        metrics_path: "/api/VPNConnectionMonitor"
+        metrics_path: "/api/orchestrators/VPNConnectionMonitor"
       #  #params:
       #  #  subscription-key: ['']
         
