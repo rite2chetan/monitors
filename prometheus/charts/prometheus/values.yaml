@@ -1702,8 +1702,8 @@ serverFiles:
           - targets: ['apich.azure-api.net']
         metrics_path: "/chetan-connection-monitor/orchestrators/VPNConnectionMonitor"
       #  metrics_path: "/api/orchestrators/VPNConnectionMonitor"
-      #  params:
-      #    subscription-key: ['']
+        params:
+          subscription-key: ['8e9ea1208a1c41008747a4af3c57a5d1']
         
       #- job_name: 'VPNConnection_Monitoring_durable'
       #  honor_labels: true
