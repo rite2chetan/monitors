@@ -1718,7 +1718,7 @@ serverFiles:
         honor_labels: true
         scrape_interval: 3m
         scheme: https
-        scrape_timeout: 5m
+        scrape_timeout: 3m
         static_configs:
           - targets: ['chetan-lb-connection.azurewebsites.net']  
         metrics_path: "/api/lb_monitor"
