@@ -1720,8 +1720,8 @@ serverFiles:
         scheme: https
         scrape_timeout: 3m
         static_configs:
-          - targets: ['chetan-lb-connection.azurewebsites.net']  
-        metrics_path: "/api/lb_monitor"
+          - targets: ['apich.azure-api.net']  
+        metrics_path: "/chetan-lb-connection/orchestrators/LBConnectionMonitor"
         
       #- job_name: 'VM_Host_Monitoring'
       #  honor_labels: true
