@@ -1722,6 +1722,8 @@ serverFiles:
         static_configs:
           - targets: ['apich.azure-api.net']  
         metrics_path: "/chetan-lb-connection/orchestrators/LBConnectionMonitor"
+        params:
+          subscription-key: ['8e9ea1208a1c41008747a4af3c57a5d1']
         
       #- job_name: 'VM_Host_Monitoring'
       #  honor_labels: true
