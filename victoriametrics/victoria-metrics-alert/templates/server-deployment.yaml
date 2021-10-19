@@ -1,12 +1,6 @@
 {{- if and .Values.server.enabled -}}
 {{- if not .Values.server.extraArgs.rule }}
 {{- end -}}
-{{- if and (not .Values.alertmanager.enabled) (eq .Values.server.notifier.alertmanager.url "") -}}
-{{- fail "alert manager URL must be specified. Please fill server.notifier.alertmanager.url or enable Alertmanager in values file" -}}
-{{- end -}}
-{{- if eq .Values.server.datasource.url "" -}}
-{{- fail "server.datasource.url datasource URL must be specified" -}}
-{{- end -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
