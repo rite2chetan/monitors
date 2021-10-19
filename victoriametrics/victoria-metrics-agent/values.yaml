@@ -63,7 +63,7 @@ podDisruptionBudget:
    - http://vm-insert:8480/insert/0/prometheus
 #   - http://prometheus:8480/insert/0/prometheus
 
-multiTenantUrls: []
+#multiTenantUrls: []
 # multiTenantUrls:
 #   - http://vm-insert-az1:8480
 #   - http://vm-insert-az2:8480
