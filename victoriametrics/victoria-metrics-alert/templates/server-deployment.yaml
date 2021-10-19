@@ -1,7 +1,6 @@
 {{- if and .Values.server.enabled -}}
 {{- if not .Values.server.extraArgs.rule }}
 {{- end -}}
-{{- end -}}
 {{- if and (not .Values.alertmanager.enabled) (eq .Values.server.notifier.alertmanager.url "") -}}
 {{- fail "alert manager URL must be specified. Please fill server.notifier.alertmanager.url or enable Alertmanager in values file" -}}
 {{- end -}}
