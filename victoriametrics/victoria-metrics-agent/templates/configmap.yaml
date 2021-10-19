@@ -1,0 +1,13 @@
+{{- if eq .Values.configMap "" }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "chart.configname" .}}
+  namespace: {{ .Release.Namespace }}
+  labels: {{- include "chart.labels" . | nindent 4 }}
+data:
+  scrape.yml: |
+    {{- with .Values.config }}
+    {{ . | toYaml | nindent 4 }}
+    {{- end }}
+{{- end }}
