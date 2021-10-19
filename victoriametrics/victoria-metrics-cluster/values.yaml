@@ -136,7 +136,7 @@ vmselect:
   # -- Pod's annotations
   podAnnotations: {}
   # -- Count of vmselect pods
-  replicaCount: 2
+  replicaCount: 1
   # -- Container workdir
   containerWorkingDir: ""
   # -- Resource object
@@ -319,7 +319,7 @@ vminsert:
   # -- Pod's annotations
   podAnnotations: {}
   # -- Count of vminsert pods
-  replicaCount: 2
+  replicaCount: 1
   # -- Container workdir
   containerWorkingDir: ""
   # -- Resource object
@@ -509,7 +509,7 @@ vmstorage:
   annotations: {}
   extraLabels: {}
   # -- Count of vmstorage pods
-  replicaCount: 2
+  replicaCount: 1
   # -- Container workdir
   containerWorkingDir: ""
   # -- Deploy order policy for StatefulSet pods
