@@ -58,11 +58,11 @@ server:
       username: ""
       password: ""
 
-#  remote:
-#    write:
-#      url: ""
-#    read:
-#      url: ""
+  remote:
+    write:
+      url: ""
+    read:
+      url: ""
 
   notifier:
     alertmanager:
