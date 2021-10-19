@@ -53,16 +53,16 @@ server:
   # vmalert reads metrics from source, next section represents its configuration. It can be any service which supports
   # MetricsQL or PromQL.
   datasource:
-    url: ""
-    basicAuth:
-      username: ""
-      password: ""
+    url: "http://vm-select:8481/insert/0/prometheus"
+#    basicAuth:
+#      username: ""
+#      password: ""
 
-  remote:
-    write:
-      url: ""
-    read:
-      url: ""
+#  remote:
+#    write:
+#      url: ""
+#    read:
+#      url: ""
 
   notifier:
     alertmanager:
