@@ -509,5 +509,18 @@ config:
         - source_labels: [__meta_kubernetes_pod_name]
           action: replace
           target_label: kubernetes_pod_name
+          
+       - job_name: 'VPN_connection_monitoring'
+        honor_labels: true
+        scrape_interval: 3m
+        scheme: https
+        scrape_timeout: 3m
+        static_configs:
+      #    - targets: ['chetan-connection-monitor.azurewebsites.net']
+          - targets: ['apich.azure-api.net']
+        metrics_path: "/chetan-connection-monitor/orchestrators/VPNConnectionMonitor"
+      #  metrics_path: "/api/orchestrators/VPNConnectionMonitor"
+        params:
+          subscription-key: ['8e9ea1208a1c41008747a4af3c57a5d1']
       ## End of COPY
 
