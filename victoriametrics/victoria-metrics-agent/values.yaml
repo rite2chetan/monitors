@@ -410,6 +410,34 @@ config:
       #  metrics_path: "/api/orchestrators/VPNConnectionMonitor"
       params:
         subscription-key: ['8e9ea1208a1c41008747a4af3c57a5d1']
+        
+    - job_name: 'ANF_Replication'
+      honor_labels: true
+      scrape_interval: 3m
+      scrape_timeout: 2m
+      scheme: https
+      static_configs:
+        - targets: ['anfreplicationmonitoring.azurewebsites.net']
+      metrics_path: "/api/orchestrators/MonitorOrchestrator"
+        
+    - job_name: 'Blob_Storage_Metrics'
+      honor_labels: true
+      scrape_interval: 1m
+      scheme: https
+      static_configs:
+        - targets: ['blobsid.azurewebsites.net']
+      metrics_path: "/api/Prometheus_Exporter"
+      
+    - job_name: 'LB_connection_monitoring'
+      honor_labels: true
+      scrape_interval: 3m
+      scheme: https
+      scrape_timeout: 3m
+      static_configs:
+        - targets: ['apich.azure-api.net']  
+      metrics_path: "/chetan-lb-connection/orchestrators/LBConnectionMonitor"
+      params:
+        subscription-key: ['8e9ea1208a1c41008747a4af3c57a5d1']
           
     - job_name: "kubernetes-service-endpoints-slow"
       scrape_interval: 5m
