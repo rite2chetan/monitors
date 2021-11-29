@@ -1692,20 +1692,6 @@ serverFiles:
           - targets: ['blobsid.azurewebsites.net']
         metrics_path: "/api/Prometheus_Exporter"
         
-      - job_name: 'Unattached_disk_monitoring'
-        honor_labels: true
-        scrape_interval: 2m
-        scheme: https
-        scrape_timeout: 5m
-        static_configs:
-      #    - targets: ['chetan-connection-monitor.azurewebsites.net']
-          - targets: ['apich.azure-api.net']
-        metrics_path: "/chetan-unattached-disk-monitor/disktrigger"
-      #  metrics_path: "/api/orchestrators/VPNConnectionMonitor"
-        params:
-          subscription-key: ['8e9ea1208a1c41008747a4af3c57a5d1']
-        
-        
       - job_name: 'VPN_connection_monitoring'
         honor_labels: true
         scrape_interval: 3m
@@ -1716,6 +1702,17 @@ serverFiles:
           - targets: ['apich.azure-api.net']
         metrics_path: "/chetan-connection-monitor/orchestrators/VPNConnectionMonitor"
       #  metrics_path: "/api/orchestrators/VPNConnectionMonitor"
+        params:
+          subscription-key: ['8e9ea1208a1c41008747a4af3c57a5d1']
+          
+      - job_name: 'Unattached_disk_monitoring'
+        honor_labels: true
+        scrape_interval: 2m
+        scheme: https
+        scrape_timeout: 5m
+        static_configs:
+          - targets: ['apich.azure-api.net']
+        metrics_path: "/chetan-unattached-disk-monitor/disktrigger"
         params:
           subscription-key: ['8e9ea1208a1c41008747a4af3c57a5d1']
         
