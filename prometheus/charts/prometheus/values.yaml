@@ -1714,16 +1714,16 @@ serverFiles:
         params:
           subscription-key: ['8e9ea1208a1c41008747a4af3c57a5d1']
         
-      - job_name: 'LB_connection_monitoring'
-        honor_labels: true
-        scrape_interval: 3m
-        scheme: https
-        scrape_timeout: 3m
-        static_configs:
-          - targets: ['apich.azure-api.net']  
-        metrics_path: "/chetan-lb-connection/orchestrators/LBConnectionMonitor"
-        params:
-          subscription-key: ['8e9ea1208a1c41008747a4af3c57a5d1']
+      #- job_name: 'LB_connection_monitoring'
+      #  honor_labels: true
+      #  scrape_interval: 3m
+      #  scheme: https
+      #  scrape_timeout: 3m
+      #  static_configs:
+      #    - targets: ['apich.azure-api.net']  
+      #  metrics_path: "/chetan-lb-connection/orchestrators/LBConnectionMonitor"
+      #  params:
+      #    subscription-key: ['8e9ea1208a1c41008747a4af3c57a5d1']
         
       #- job_name: 'VM_Host_Monitoring'
       #  honor_labels: true
