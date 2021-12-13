@@ -130,6 +130,9 @@ filter:
   json {	
          source => "message"	
        }
+  split { 
+         field => "value"
+        }
 ## @param output [string] Output Plugins configuration
 ## ref: https://www.elastic.co/guide/en/logstash/current/output-plugins.html
 ##
