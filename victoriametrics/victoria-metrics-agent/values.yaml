@@ -403,7 +403,7 @@ config:
       honor_labels: true
       scrape_interval: 3m
       scheme: https
-      scrape_timeout: 3m
+      scrape_timeout: 5m
       static_configs:
       #    - targets: ['chetan-connection-monitor.azurewebsites.net']
         - targets: ['apich.azure-api.net']
