@@ -453,7 +453,7 @@ config:
       params:
         subscription-key: ['8e9ea1208a1c41008747a4af3c57a5d1']
         
-     - job_name: 'ASR_monitoring'
+    - job_name: 'ASR_monitoring'
       honor_labels: true
       scrape_interval: 3m
       scheme: https
@@ -461,9 +461,6 @@ config:
       static_configs:    
         - targets: ['asrmonitoring.azurewebsites.net']  
       metrics_path: "/api/ASR_Monitoring"
-      
-        
-    
           
     - job_name: "kubernetes-service-endpoints-slow"
       scrape_interval: 5m
