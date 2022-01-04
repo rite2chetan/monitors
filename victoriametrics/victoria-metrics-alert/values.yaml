@@ -183,8 +183,21 @@ server:
   configMap: ""
   config:
     alerts:
-      groups: []
-
+      groups: 
+        - name: ASR_Monitoring
+          rules:
+            - alert: ASR_RPO
+              expr: ASR_RPO{job="ASR_monitoring"}>300
+              annotations: 
+                summary: '{{ $labels.host_name}} - RPO above 5 minutes'
+                description: 'RPO for {{ $labels.host_name}} is above s minutes and is currently at {{ humanize $value }} Seconds'
+            
+            - alert: ASR-replication-health
+              expr: ASR_replicationHealth{job="ASR_monitoring"}!=0
+              annotations: 
+                summary: '{{ $labels.host_name}} - replication health is abnormal'
+                description: 'replication health for {{ $labels.host_name}}=  {{ $labels.replicationHealth_status}}'
+                
 serviceMonitor:
   enabled: false
   extraLabels: {}
@@ -193,7 +206,7 @@ serviceMonitor:
 #    scrapeTimeout: 5s
 
 alertmanager:
-  enabled: false
+  enabled: true
   replicaCount: 1
   podMetadata:
     labels: {}
