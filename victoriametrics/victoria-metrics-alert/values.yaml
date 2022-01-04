@@ -53,10 +53,7 @@ server:
   # vmalert reads metrics from source, next section represents its configuration. It can be any service which supports
   # MetricsQL or PromQL.
   datasource:
-    url: "http://vm-select:8481/insert/0/prometheus"
-    basicAuth:
-      username: ""
-      password: ""
+    url: "http://victoria-metrics-cluster-vmselect.chetan.svc.cluster.local:8481/select/0/prometheus/"
 
   remote:
     write:
@@ -66,7 +63,7 @@ server:
 
   notifier:
     alertmanager:
-      url: "http://vmalert-alertmanager:9093"
+      url: "http://victoria-metrics-alert-alertmanager:9093"
 
   extraArgs:
     envflag.enable: "true"
