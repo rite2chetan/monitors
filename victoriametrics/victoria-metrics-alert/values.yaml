@@ -54,6 +54,9 @@ server:
   # MetricsQL or PromQL.
   datasource:
     url: "http://victoria-metrics-cluster-vmselect.chetan.svc.cluster.local:8481/select/0/prometheus/"
+    basicAuth:
+      username: ""
+      password: ""
 
   remote:
     write:
