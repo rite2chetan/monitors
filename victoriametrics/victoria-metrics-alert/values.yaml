@@ -190,7 +190,7 @@ server:
               expr: ASR_RPO{job="ASR_monitoring"}>300
               annotations: 
                 summary: '{{ $labels.host_name}} - RPO above 5 minutes'
-                description: 'RPO for {{ $labels.host_name}} is above s minutes and is currently at {{ humanize $value }} Seconds'
+                description: 'RPO for {{ $labels.host_name}} is above 5 minutes and is currently at {{ humanize $value }} Seconds'
             
             - alert: ASR-replication-health
               expr: ASR_replicationHealth{job="ASR_monitoring"}!=0
@@ -230,7 +230,7 @@ alertmanager:
   configMap: ""
   config:
     global:
-      resolve_timeout: 5m
+      resolve_timeout: 4h
     route:
       # default receiver
       receiver: devnull
