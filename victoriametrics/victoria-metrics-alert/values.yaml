@@ -188,15 +188,28 @@ server:
           rules:
             - alert: ASR_RPO
               expr: ASR_RPO{job="ASR_monitoring"}>300
+              labels:
+                severity: critical
               annotations: 
                 summary: '{{ $labels.host_name}} - RPO above 5 minutes'
                 description: 'RPO for {{ $labels.host_name}} is above 5 minutes and is currently at {{ humanize $value }} Seconds'
             
             - alert: ASR-replication-health
               expr: ASR_replicationHealth{job="ASR_monitoring"}!=0
+              labels:
+                severity: '{{ $labels.replicationHealth_status}}'
               annotations: 
                 summary: '{{ $labels.host_name}} - replication health is abnormal'
                 description: 'replication health for {{ $labels.host_name}}=  {{ $labels.replicationHealth_status}}'
+                
+            - alert: ASR-events
+              expr: ASR_health_Event{job="ASR_monitoring"}!=0
+              labels:
+                severity: '{{ $labels.severity}}'
+              annotations: 
+                summary: '{{ $labels.host_name}} - {{ $labels.severity}} event'
+                description: '{{ $labels.errorMessage}}'
+
                 
 serviceMonitor:
   enabled: false
@@ -242,8 +255,31 @@ alertmanager:
       group_interval: 10s
       # How long to wait before sending a notification again if it has already been sent successfully for an alert
       repeat_interval: 24h
+      
+      routes:
+        - receiver: prom2teams_critical
+          continue: true
+          group_by: [...]
+          match_re:
+            severity: critical
+            
+        - receiver: prom2teams_warning
+          continue: true
+          group_by: [...]
+          match_re:
+            severity: warning
+      
     receivers:
       - name: devnull
+      - name: prom2teams_critical
+        webhook_configs:
+        - url: "http://prom2teams.chetan.svc.cluster.local:8089/v2/connector_critical"
+          send_resolved: true
+      - name: prom2teams_warning
+        webhook_configs:
+        - url: "http://prom2teams.chetan.svc.cluster.local:8089/v2/connector_warning"
+          send_resolved: true
+          
   templates: {}
   #  alertmanager.tmpl: |-
   service:
