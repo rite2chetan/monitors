@@ -460,7 +460,7 @@ config:
       honor_labels: true
       scrape_interval: 3m
       scheme: https
-      scrape_timeout: 3m
+      scrape_timeout: 30s
       static_configs:    
         - targets: ['asrmonitoring.azurewebsites.net']  
       metrics_path: "/api/ASR_Monitoring"
