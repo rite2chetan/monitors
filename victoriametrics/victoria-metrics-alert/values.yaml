@@ -196,7 +196,7 @@ server:
                 description: 'RPO for {{ $labels.host_name}} is above 5 minutes and is currently at {{ humanize $value }} Seconds'
             
             - alert: ASR-Replication-Health
-              expr: ASR_replicationHealth{job="ASR_monitoring"}!=0
+              expr: ASR_replicationHealth{job="ASR_monitoring"}>0
               for: 2m
               labels:
                 severity: '{{ $labels.replicationHealth_status}}'
@@ -205,7 +205,7 @@ server:
                 description: 'replication health of host {{ $labels.host_name}} =  {{ $labels.replicationHealth_status}}'
                 
             - alert: ASR-Failover-Health
-              expr: ASR_FailoverHealth{job="ASR_monitoring"}!=0
+              expr: ASR_FailoverHealth{job="ASR_monitoring"}>0
               for: 2m
               labels:
                 severity: '{{ $labels.FailoverHealth}}'
@@ -215,7 +215,7 @@ server:
             
             
             - alert: ASR-Events
-              expr: ASR_health_Event{job="ASR_monitoring"}!=0
+              expr: ASR_health_Event{job="ASR_monitoring"}>0
               for: 2m
               labels:
                 severity: '{{ $labels.severity}}'
