@@ -188,6 +188,7 @@ server:
           rules:
             - alert: ASR_RPO
               expr: ASR_RPO{job="ASR_monitoring"}>300
+              for: 2m
               labels:
                 severity: Critical
               annotations: 
@@ -196,6 +197,7 @@ server:
             
             - alert: ASR-Replication-Health
               expr: ASR_replicationHealth{job="ASR_monitoring"}!=0
+              for: 2m
               labels:
                 severity: '{{ $labels.replicationHealth_status}}'
               annotations: 
@@ -204,6 +206,7 @@ server:
                 
             - alert: ASR-Failover-Health
               expr: ASR_FailoverHealth{job="ASR_monitoring"}!=0
+              for: 2m
               labels:
                 severity: '{{ $labels.FailoverHealth}}'
               annotations: 
@@ -213,6 +216,7 @@ server:
             
             - alert: ASR-Events
               expr: ASR_health_Event{job="ASR_monitoring"}!=0
+              for: 2m
               labels:
                 severity: '{{ $labels.severity}}'
               annotations: 
