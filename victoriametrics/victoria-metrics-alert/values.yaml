@@ -189,20 +189,29 @@ server:
             - alert: ASR_RPO
               expr: ASR_RPO{job="ASR_monitoring"}>300
               labels:
-                severity: critical
+                severity: Critical
               annotations: 
                 summary: '{{ $labels.host_name}} - RPO above 5 minutes'
                 description: 'RPO for {{ $labels.host_name}} is above 5 minutes and is currently at {{ humanize $value }} Seconds'
             
-            - alert: ASR-replication-health
+            - alert: ASR-Replication-Health
               expr: ASR_replicationHealth{job="ASR_monitoring"}!=0
               labels:
                 severity: '{{ $labels.replicationHealth_status}}'
               annotations: 
                 summary: '{{ $labels.host_name}} - replication health is abnormal'
-                description: 'replication health for {{ $labels.host_name}}=  {{ $labels.replicationHealth_status}}'
+                description: 'replication health of host {{ $labels.host_name}} =  {{ $labels.replicationHealth_status}}'
                 
-            - alert: ASR-events
+            - alert: ASR-Failover-Health
+              expr: ASR_FailoverHealth{job="ASR_monitoring"}!=0
+              labels:
+                severity: '{{ $labels.FailoverHealth}}'
+              annotations: 
+                summary: '{{ $labels.host_name}} - failover health is abnormal'
+                description: 'Failover health of host {{ $labels.host_name}} =  {{ $labels.FailoverHealth}}'
+            
+            
+            - alert: ASR-Events
               expr: ASR_health_Event{job="ASR_monitoring"}!=0
               labels:
                 severity: '{{ $labels.severity}}'
@@ -261,13 +270,13 @@ alertmanager:
           continue: true
           group_by: [...]
           match_re:
-            severity: critical
+            severity: Critical
             
         - receiver: prom2teams_warning
           continue: true
           group_by: [...]
           match_re:
-            severity: warning
+            severity: Warning
       
     receivers:
       - name: devnull
