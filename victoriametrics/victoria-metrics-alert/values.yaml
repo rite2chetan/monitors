@@ -208,7 +208,7 @@ server:
                 severity: '{{ $labels.FailoverHealth}}'
               annotations: 
                 summary: '{{ $labels.host_name}} - failover health is abnormal'
-                description: 'Failover health of host {{ $labels.host_name}} =  {{ $labels.replicationHealth_status}}'
+                description: 'Failover health of host {{ $labels.host_name}} =  {{ $labels.FailoverHealth}}'
             
             
             - alert: ASR-Events
