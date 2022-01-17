@@ -192,26 +192,26 @@ server:
               labels:
                 severity: Critical
               annotations: 
-                summary: '{{ $labels.host_name}} - RPO above 5 minutes'
-                description: 'RPO for {{ $labels.host_name}} is above 5 minutes and is currently at {{ humanize $value }} Seconds'
+                summary: '{{ $labels.hostname}} - RPO above 5 minutes'
+                description: 'RPO for {{ $labels.hostname}} is above 5 minutes and is currently at {{ humanize $value }} Seconds'
             
             - alert: ASR-Replication-Health
               expr: ASR_replicationHealth{job="ASR_monitoring"}>0
               for: 2m
               labels:
-                severity: '{{ $labels.replicationHealth_status}}'
+                severity: '{{ $labels.replicationHealth}}'
               annotations: 
-                summary: '{{ $labels.host_name}} - replication health is abnormal'
-                description: 'replication health of host {{ $labels.host_name}} =  {{ $labels.replicationHealth_status}}'
+                summary: '{{ $labels.hostname}} - replication health is abnormal'
+                description: 'replication health of host {{ $labels.hostname}} =  {{ $labels.replicationHealth}}'
                 
             - alert: ASR-Failover-Health
               expr: ASR_FailoverHealth{job="ASR_monitoring"}>0
               for: 2m
               labels:
-                severity: '{{ $labels.FailoverHealth}}'
+                severity: '{{ $labels.failoverHealth}}'
               annotations: 
-                summary: '{{ $labels.host_name}} - failover health is abnormal'
-                description: 'Failover health of host {{ $labels.host_name}} =  {{ $labels.FailoverHealth}}'
+                summary: '{{ $labels.hostname}} - failover health is abnormal'
+                description: 'Failover health of host {{ $labels.hostname}} =  {{ $labels.failoverHealth}}'
             
             
             - alert: ASR-Events
@@ -220,8 +220,8 @@ server:
               labels:
                 severity: '{{ $labels.severity}}'
               annotations: 
-                summary: '{{ $labels.host_name}} - {{ $labels.severity}} event'
-                description: '{{ $labels.errorMessage}}'
+                summary: '{{ $labels.hostname}} - {{ $labels.severity}} event'
+                description: '{{ $labels.error_message}}'
 
                 
 serviceMonitor:
