@@ -466,6 +466,12 @@ config:
       metrics_path: "asrmonitoring/ASR_Monitoring"
       params:
         subscription-key: ['174b4eb18a78478bb8ba729c817dc4a6']
+      relabel_configs:
+        - source_labels: [__address__]
+          regex: .*
+          target_label: instance
+          replacement: azure_site_recovery
+          action: replace
           
     - job_name: "kubernetes-service-endpoints-slow"
       scrape_interval: 5m
