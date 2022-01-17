@@ -461,9 +461,11 @@ config:
       scrape_interval: 3m
       scheme: https
       scrape_timeout: 30s
-      static_configs:    
-        - targets: ['asrmonitoring.azurewebsites.net']  
-      metrics_path: "/api/ASR_Monitoring"
+      static_configs:     
+        - targets: ['azpoe-shared-apimgmt.azure-api.net']  
+      metrics_path: "asrmonitoring/ASR_Monitoring"
+      params:
+        subscription-key: ['174b4eb18a78478bb8ba729c817dc4a6']
           
     - job_name: "kubernetes-service-endpoints-slow"
       scrape_interval: 5m
