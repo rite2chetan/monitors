@@ -412,21 +412,37 @@ config:
       params:
         subscription-key: ['8e9ea1208a1c41008747a4af3c57a5d1']
         
-    - job_name: 'Unattached_disk_monitoring'
+#    - job_name: 'Unattached_disk_monitoring'
+#      scrape_interval: 2m
+#      scrape_timeout: 5m
+#      honor_labels: true
+#      honor_timestamps: true
+#      params:
+#        subscription-key:
+#        - 8e9ea1208a1c41008747a4af3c57a5d1
+#      metrics_path: chetan-unattached-disk-monitor/unattached_disk_HTTPStart
+#      scheme: https
+#      follow_redirects: true
+#      static_configs:
+#      #    - targets: ['chetan-connection-monitor.azurewebsites.net']
+#      - targets: 
+#        - apich.azure-api.net
+        
+    - job_name: unattached-disk-monitoring
       scrape_interval: 2m
-      scrape_timeout: 5m
+      scrape_timeout: 3m
       honor_labels: true
       honor_timestamps: true
       params:
         subscription-key:
-        - 8e9ea1208a1c41008747a4af3c57a5d1
-      metrics_path: chetan-unattached-disk-monitor/unattached_disk_HTTPStart
+        - 0098a01709b84d7a911482656ac46c90
+      metrics_path: azpoe-hecmonitor-unattacheddisk/unattached_disk_HTTPStart
       scheme: https
       follow_redirects: true
       static_configs:
-      #    - targets: ['chetan-connection-monitor.azurewebsites.net']
-      - targets: 
-        - apich.azure-api.net  
+      - targets:
+        - azpoe-hecmonitor.azure-api.net
+        
         
     - job_name: 'ANF_Replication'
       honor_labels: true
