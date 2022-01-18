@@ -460,7 +460,7 @@ config:
       honor_labels: true
       scrape_interval: 3m
       scheme: https
-      scrape_timeout: 30s
+      scrape_timeout: 1m
       static_configs:     
         - targets: ['azpoe-shared-apimgmt.azure-api.net']  
       metrics_path: "asrmonitoring/ASR_Monitoring"
