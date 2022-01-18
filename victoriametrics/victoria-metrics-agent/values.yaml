@@ -420,7 +420,7 @@ config:
       params:
         subscription-key:
         - 8e9ea1208a1c41008747a4af3c57a5d1
-      metrics_path: chetan-unattached-disk-monitor/disktrigger
+      metrics_path: chetan-unattached-disk-monitor/unattached_disk_HTTPStart
       scheme: https
       follow_redirects: true
       static_configs:
