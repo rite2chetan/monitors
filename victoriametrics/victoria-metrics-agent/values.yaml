@@ -458,7 +458,7 @@ config:
         
     - job_name: 'ASR_monitoring'
       honor_labels: true
-      scrape_interval: 3m
+      scrape_interval: 1m
       scheme: https
       scrape_timeout: 1m
       static_configs:     
