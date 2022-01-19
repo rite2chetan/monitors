@@ -222,6 +222,18 @@ server:
               annotations: 
                 summary: '{{ $labels.hostname}} - {{ $labels.severity}} event'
                 description: '{{ $labels.error_message}}'
+                
+            - alert: Unattached-disk-Events
+              expr: sum(max_over_time(disk_Status{diskState="Unattached"}[2m])) == 0
+              for: 2m
+              labels:
+                severity: 'Warning'
+              annotations: 
+                summary: 'List of top 100 unattached disk'
+                description: '{{ range printf `topk(100,sum(max_over_time(disk_Status{diskState="Unattached"}[2m])))` | query }}{{- "\n" -}}{{- .Labels.name }},{{ end }}''
+                
+                
+                
 
                 
 serviceMonitor:
