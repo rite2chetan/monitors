@@ -1675,14 +1675,14 @@ serverFiles:
       #    - targets: ['anfdurablefunction.azurewebsites.net']
       #  metrics_path: "/api/ANFMetrics"
         
-      - job_name: 'ANF_Replication'
-        honor_labels: true
-        scrape_interval: 3m
-        scrape_timeout: 2m
-        scheme: https
-        static_configs:
-          - targets: ['anfreplicationmonitoring.azurewebsites.net']
-        metrics_path: "/api/orchestrators/MonitorOrchestrator"
+  #    - job_name: 'ANF_Replication'
+  #      honor_labels: true
+  #      scrape_interval: 3m
+  #      scrape_timeout: 2m
+  #      scheme: https
+  #      static_configs:
+  #        - targets: ['anfreplicationmonitoring.azurewebsites.net']
+  #      metrics_path: "/api/orchestrators/MonitorOrchestrator"
         
       - job_name: 'Blob_Storage_Metrics'
         honor_labels: true
