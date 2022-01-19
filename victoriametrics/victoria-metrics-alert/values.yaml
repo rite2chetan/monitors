@@ -230,7 +230,7 @@ server:
                 severity: 'Warning'
               annotations: 
                 summary: 'List of top 100 unattached disk'
-                description: '{{ range printf `topk(10,sum(max_over_time(disk_Status{diskState="Unattached"}[2m]))) == 0` | query }},{{end}}'
+                description: '{{ printf `topk(100000,max_over_time(disk_Status{diskState="Unattached"}[2m])) == 0` }},{{end}}'
                 
                 
                 
