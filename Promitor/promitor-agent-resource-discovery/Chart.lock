@@ -1,6 +1,0 @@
-dependencies:
-- name: promitor-agent-resource-discovery
-  repository: https://charts.promitor.io/
-  version: 0.7.2
-digest: sha256:93a2ef5f6ac7c1c16c9bb3383298906a9e935a062b196f40236a4f5805717962
-generated: "2022-01-20T14:17:27.457808+05:30"
