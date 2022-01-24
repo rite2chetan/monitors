@@ -1,15 +1,10 @@
 apiVersion: v2
-appVersion: 0.7.0
-description: Automatically discover Azure resources to be scraped by Promitor Scraper
-  agent.
-home: https://promitor.io
-icon: https://raw.githubusercontent.com/tomkerkhove/promitor/master/docs/media/logos/promitor.png
-maintainers:
-- name: Tom Kerkhove
-  url: https://github.com/tomkerkhove
 name: promitor-agent-resource-discovery
-sources:
-- https://github.com/tomkerkhove/promitor
-- https://github.com/promitor/charts
+description: resource discover for azure
 type: application
-version: 0.7.2
+version: 6.11.0
+appVersion: 7.5.5
+dependencies:
+- name: promitor-agent-resource-discovery
+  version: "0.7.2"
+  repository: "https://charts.promitor.io/"
