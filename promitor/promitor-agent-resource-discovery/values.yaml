@@ -178,7 +178,3 @@ extraVolumes: []
   #       readOnly: true
   #       volumeAttributes:
   #         secretProviderClass: "promitor-secrets"
-
-
-
-
