@@ -34,15 +34,15 @@ prometheus:
     interval: 60s
     timeout: 10s
 
-#telemetry:
-#  defaultLogLevel: "Error"
-#  applicationInsights:
-#    enabled: false
-#    key: ""
-#    logLevel: ""
-#  containerLogs:
-#    enabled: true
-#    logLevel: ""
+telemetry:
+  defaultLogLevel: "Error"
+  applicationInsights:
+    enabled: false
+    key: ""
+    logLevel: ""
+  containerLogs:
+    enabled: true
+    logLevel: ""
 
 ## Metric Declaration YAML
 azureLandscape:
