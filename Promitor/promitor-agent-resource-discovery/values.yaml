@@ -4,7 +4,7 @@ azureAuthentication:
 azureLandscape:
   cloud: Global
   tenantId: 42f7676c-f455-423c-82f6-dc2d99791af7
-  subscriptionIds:
+  subscriptions:
   - b437f37b-b750-489e-bc55-43044286f6e1
   - c8214d4e-fe43-4fcd-83de-27a81b7ec907
 resourceDiscoveryGroups:
