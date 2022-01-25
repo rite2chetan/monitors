@@ -233,13 +233,13 @@ server:
                 description: '{{ range printf `topk(100,max_over_time(disk_Status{diskState="Unattached"}[2m]))` | query }}{{- "\n" -}}{{- .Labels.name }},{{end}}'
               
             - alert: VPN-Connection-down
-              expr: VPN_connectionStatus{job="VPN_connection_monitoring"}>0
+              expr: VPN_connectionStatus{job="VPN_connection_monitoring"} == 0
               for: 2m
               labels:
                 severity: 'Warning'
               annotations: 
                 summary: 'List of VPN in not conneted state'
-                description: '{{ range printf `topk(10000,VPN_connectionStatus{job="VPN_connection_monitoring"}>0` | query }}{{- "\n" -}}{{- .Labels.name }},{{end}}'
+                description: '{{ range printf `topk(10000,VPN_connectionStatus{job="VPN_connection_monitoring"} == 0` | query }}{{- "\n" -}}{{- .Labels.name }},{{end}}'
                 
                 
                 
