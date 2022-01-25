@@ -239,7 +239,7 @@ server:
                 severity: 'Warning'
               annotations: 
                 summary: 'List of VPN in not conneted state'
-                description: '{{ range printf `topk(10000,VPN_connectionStatus{job="VPN_connection_monitoring"}[2m] == 0)` | query }}{{- "\n" -}}{{- .Labels.VPNConnection }},{{end}}'
+                description: '{{ range printf `topk(10000,VPN_connectionStatus{ConnectionStatus="NotConnected"}[2m] == 0)` | query }}{{- "\n" -}}{{- .Labels.VPNConnection }},{{end}}'
                 
                 
                 
