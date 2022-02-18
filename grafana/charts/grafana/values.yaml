@@ -441,10 +441,10 @@ datasources:
     apiVersion: 1
     datasources:
     - name: victoriametrics
-      type: victoriametrics
+      type: prometheus
       url: http://victoria-metrics-cluster-vmselect.chetan.svc.cluster.local:8481/select/0/prometheus/
-#      access: proxy
-#      isDefault: true
+      access: proxy
+      isDefault: true
 #    - name: CloudWatch
 #        type: cloudwatch
 #        access: proxy
