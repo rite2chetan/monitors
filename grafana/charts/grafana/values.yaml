@@ -436,13 +436,13 @@ plugins: []
 ## Configure grafana datasources
 ## ref: http://docs.grafana.org/administration/provisioning/#datasources
 ##
-#datasources: 
-#  datasources.yaml:
-#    apiVersion: 1
-#    datasources:
-#    - name: victoriametrics
-#      type: victoriametrics
-#      url: http://localhost:8080
+datasources: 
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    - name: victoriametrics
+      type: victoriametrics
+      url: http://victoria-metrics-cluster-vmselect.chetan.svc.cluster.local:8481/select/0/prometheus/
 #      access: proxy
 #      isDefault: true
 #    - name: CloudWatch
