@@ -455,11 +455,14 @@ config:
         
     - job_name: 'Blob_Storage_Metrics'
       honor_labels: true
-      scrape_interval: 1m
+      scrape_interval: 5m
+      scrape_timeout: 3m
       scheme: https
       static_configs:
-        - targets: ['blobsid.azurewebsites.net']
-      metrics_path: "/api/Prometheus_Exporter"
+        - targets: ['azpoe-shared-apimgmt.azure-api.net']
+      metrics_path: "/blobreporting/Prometheus_Exporter"
+      params:
+        subscription-key: ['174b4eb18a78478bb8ba729c817dc4a6']
       
     - job_name: 'LB_connection_monitoring'
       honor_labels: true
