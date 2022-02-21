@@ -483,7 +483,7 @@ dashboardProviders:
     providers:
     - name: 'monitoring'
       orgId: 1
-      folder: ''
+      folder: 'monitoring'
       type: file
       disableDeletion: false
       editable: true
