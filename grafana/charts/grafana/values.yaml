@@ -508,7 +508,7 @@ dashboards:
   #     revision: 2
   #     datasource: Prometheus
      local-dashboard:
-       url: https://raw.githubusercontent.com/rite2chetan/monitors/main/grafana-dashboards/SMR Storage Account Dashboard-1625138745052.json
+       url: https://raw.githubusercontent.com/rite2chetan/monitors/main/grafana-dashboards/Top.json
        token: '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'
        datasource: victoriametrics
   #   local-dashboard-base64:
