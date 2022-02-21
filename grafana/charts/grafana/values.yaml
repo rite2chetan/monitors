@@ -496,13 +496,13 @@ notifiers: {}
 ##
 ## dashboards per provider, use provider name as key.
 ##
-dashboards: {}
-   default:
-     lifecycle:
-       json: |
-         $RAW_JSON
-     custom-dashboard:
-       file: dashboards/LifeCycleManagementPolicy.json
+#dashboards: {}
+#   default:
+#     lifecycle:
+#       json: |
+#         $RAW_JSON
+#     custom-dashboard:
+#       file: dashboards/LifeCycleManagementPolicy.json
   #   prometheus-stats:
   #     gnetId: 2
   #     revision: 2
