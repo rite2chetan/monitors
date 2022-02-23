@@ -477,9 +477,9 @@ config:
         
     - job_name: 'ASR_monitoring'
       honor_labels: true
-      scrape_interval: 2m
+      scrape_interval: 5m
       scheme: https
-      scrape_timeout: 3m
+      scrape_timeout: 2m
       static_configs:     
         - targets: ['azpoe-shared-apimgmt.azure-api.net']  
       metrics_path: "asrmonitoring/ASR_Monitoring"
