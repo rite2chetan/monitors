@@ -508,7 +508,7 @@ dashboards:
   #     revision: 2
   #     datasource: Prometheus
   monitoring:
-    Blob-Reporting:
+    Top:
       url: https://raw.githubusercontent.com/rite2chetan/monitors/main/grafana-dashboards/Top.json
       token: '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'
       datasource: victoriametrics
@@ -572,6 +572,7 @@ grafana.ini:
 ## NOTE: To enable the grafana.ini must be configured with auth.ldap.enabled
 ## ref: http://docs.grafana.org/installation/configuration/#auth-ldap
 ## ref: http://docs.grafana.org/installation/ldap/#configuration
+##
 ldap:
   enabled: false
   # `existingSecret` is a reference to an existing secret containing the ldap configuration
