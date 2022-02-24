@@ -1,6 +1,6 @@
 dashboards:
   monitoring:
-    LifeCycleManagementPolicy:
+    Top:
       url: https://raw.githubusercontent.com/rite2chetan/monitors/main/grafana-dashboards/Top.json
       token: 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
       datasource: victoriaMetrics
