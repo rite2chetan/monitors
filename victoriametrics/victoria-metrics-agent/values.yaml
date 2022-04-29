@@ -466,9 +466,9 @@ config:
       
     - job_name: 'LB_connection_monitoring'
       honor_labels: true
-      scrape_interval: 3m
+      scrape_interval: 5m
       scheme: https
-      scrape_timeout: 3m
+      scrape_timeout: 5m
       static_configs:
         - targets: ['apich.azure-api.net']  
       metrics_path: "/chetan-lb-connection/orchestrators/LBConnectionMonitor"
